@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Serviços | Dhenso Ar Condicionado</title>
+  <meta name="description" content="Conheça todos os serviços da Dhenso Ar Condicionado: instalação, manutenção preventiva, corretiva, PMOC, higienização e projetos de climatização."/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .srv-detail { padding:96px 5%; }
+    .srv-detail:nth-child(even) { background:var(--gray-50); }
+    .srv-detail-grid { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:center; }
+    .srv-detail-grid.reverse { direction:rtl; }
+    .srv-detail-grid.reverse > * { direction:ltr; }
+    .srv-detail-img { border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-lg); }
+    .srv-detail-img img { width:100%; height:360px; object-fit:cover; display:block; }
+    .srv-list { list-style:none; margin-top:20px; display:flex; flex-direction:column; gap:12px; }
+    .srv-list li { display:flex; align-items:center; gap:12px; font-size:.95rem; color:var(--gray-600); }
+    .srv-list li::before { content:'→'; color:var(--blue-royal); font-weight:700; }
+    /* PMOC HIGHLIGHT */
+    .pmoc-section { background:var(--white); padding:96px 5%; }
+    .pmoc-inner { max-width:1200px; margin:0 auto; }
+    .pmoc-top-img { width:100%; border-radius:var(--radius-lg); overflow:hidden; margin-bottom:72px; height:380px; position:relative; }
+    .pmoc-top-img img { width:100%; height:100%; object-fit:cover; }
+    .pmoc-top-img::after { content:''; position:absolute; inset:0; background:linear-gradient(to right,rgba(13,38,96,.7) 0%,transparent 60%); }
+    .pmoc-top-label { position:absolute; top:50%; left:5%; transform:translateY(-50%); z-index:2; color:white; }
+    .pmoc-top-label .ptag { font-size:.75rem; font-weight:700; letter-spacing:3px; color:var(--accent); text-transform:uppercase; margin-bottom:12px; }
+    .pmoc-top-label h2 { font-family:var(--font-heading); font-size:clamp(2rem,4vw,3.2rem); font-weight:900; color:var(--blue-royal); text-shadow:0 2px 20px rgba(0,0,0,.3); }
+    .pmoc-content-grid { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:start; }
+    .pmoc-text-block { }
+    .pmoc-law-box { background:var(--blue-ice); border-left:5px solid var(--blue-royal); border-radius:0 var(--radius) var(--radius) 0; padding:28px 28px 28px 24px; margin-bottom:32px; }
+    .pmoc-law-box p { color:var(--gray-700); line-height:1.9; font-size:.97rem; }
+    .pmoc-benefits-card { background:linear-gradient(135deg,var(--blue-royal) 0%,var(--blue-dark) 100%); border-radius:var(--radius-lg); padding:40px; color:white; }
+    .pmoc-benefits-card h3 { font-family:var(--font-heading); font-size:1.25rem; font-weight:800; color:var(--accent); margin-bottom:28px; }
+    .ben-list { list-style:none; display:flex; flex-direction:column; gap:18px; }
+    .ben-list li { display:flex; align-items:flex-start; gap:14px; font-size:.95rem; line-height:1.5; }
+    .ben-check { min-width:30px; height:30px; background:rgba(255,255,255,.15); border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--accent); font-weight:700; font-size:.9rem; }
+    .normas-strip { background:var(--gray-50); border-radius:var(--radius-lg); padding:32px; margin-top:28px; display:flex; flex-direction:column; gap:12px; }
+    .normas-strip h4 { font-family:var(--font-heading); font-weight:800; color:var(--gray-900); margin-bottom:4px; font-size:.95rem; }
+    .norma-item { display:flex; align-items:center; gap:12px; }
+    .norma-badge { background:var(--blue-royal); color:white; font-size:.72rem; font-weight:700; padding:4px 10px; border-radius:100px; letter-spacing:.5px; white-space:nowrap; }
+    .norma-item span { font-size:.88rem; color:var(--gray-600); }
+    @media(max-width:1024px){ .srv-detail-grid,.pmoc-content-grid{ grid-template-columns:1fr; gap:40px; } .srv-detail-grid.reverse{ direction:ltr; } }
+  </style>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <a class="navbar-brand" href="index.html" aria-label="Dhenso Ar Condicionado">
+    <div class="navbar-logo-text">
+      <div class="logo-dhenso" id="logo-dhenso-anim">
+        <span class="logo-letter" style="--li:0">D</span><span class="logo-letter" style="--li:1">H</span><span class="logo-letter" style="--li:2">E</span><span class="logo-letter" style="--li:3">N</span><span class="logo-letter logo-letter-so" style="--li:4">S</span><span class="logo-letter logo-letter-so" style="--li:5">O</span>
+      </div>
+      <div class="logo-sub" id="logo-sub-anim">Ar Condicionado</div>
+    </div>
+  </a>
+  <ul class="navbar-nav" id="navMenu">
+    <li><a href="index.html">Início</a></li>
+    <li><a href="sobre.html">A Empresa</a></li>
+    <li><a href="servicos.html" class="active">Serviços</a></li>
+    <li><a href="contato.html" class="navbar-cta">Fale Conosco</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="section-inner">
+    <div class="breadcrumb"><a href="index.html">Início</a><span>/</span><span style="color:white">Serviços</span></div>
+    <h1>Serviços Especializados</h1>
+    <p>Soluções completas em climatização: instalação, manutenção, PMOC, higienização e muito mais.</p>
+  </div>
+</div>
+
+<!-- INSTALAÇÃO -->
+<div class="srv-detail" id="instalacao">
+  <div class="srv-detail-grid">
+    <div class="srv-detail-img"><img src="services.png" alt="Instalação de ar condicionado"/></div>
+    <div>
+      <span class="section-tag">Serviço 01</span>
+      <h2 class="section-title"><span>Instalação</span> Profissional</h2>
+      <div class="divider"></div>
+      <p style="color:var(--gray-600);line-height:1.9;margin-bottom:16px">Realizamos a instalação de todos os tipos de sistemas de ar condicionado com rigor técnico, materiais de qualidade e garantia do serviço executado.</p>
+      <ul class="srv-list">
+        <li>Split e Multi-Split residencial e comercial</li>
+        <li>Sistema VRF/VRV de alto desempenho</li>
+        <li>Fancoil e sistemas centrais de água gelada</li>
+        <li>Self-contained e Rooftop</li>
+        <li>Instalação elétrica e hidráulica complementar</li>
+      </ul>
+      <a href="contato.html" class="btn-primary" style="margin-top:32px;display:inline-flex" id="btn-orcamento-inst">Solicitar Instalação</a>
+    </div>
+  </div>
+</div>
+
+<!-- MANUTENÇÃO PREVENTIVA -->
+<div class="srv-detail" id="manutencao-preventiva">
+  <div class="srv-detail-grid reverse">
+    <div class="srv-detail-img"><img src="hero.png" alt="Manutenção preventiva de ar condicionado"/></div>
+    <div>
+      <span class="section-tag">Serviço 02</span>
+      <h2 class="section-title">Manutenção <span>Preventiva</span></h2>
+      <div class="divider"></div>
+      <p style="color:var(--gray-600);line-height:1.9;margin-bottom:16px">Contratos de manutenção periódica que garantem o pleno funcionamento dos equipamentos, reduzem custos e prolongam a vida útil do sistema.</p>
+      <ul class="srv-list">
+        <li>Limpeza de filtros e serpentinas</li>
+        <li>Verificação e recarga de gás refrigerante</li>
+        <li>Inspeção elétrica e mecânica completa</li>
+        <li>Análise de consumo energético</li>
+        <li>Relatório técnico detalhado após cada visita</li>
+      </ul>
+      <a href="contato.html" class="btn-primary" style="margin-top:32px;display:inline-flex" id="btn-orcamento-prev">Contratar Manutenção</a>
+    </div>
+  </div>
+</div>
+
+<!-- MANUTENÇÃO CORRETIVA -->
+<div class="srv-detail" id="manutencao-corretiva">
+  <div class="srv-detail-grid">
+    <div class="srv-detail-img"><img src="pmoc.png" alt="Manutenção corretiva de ar condicionado"/></div>
+    <div>
+      <span class="section-tag">Serviço 03</span>
+      <h2 class="section-title">Manutenção <span>Corretiva</span></h2>
+      <div class="divider"></div>
+      <p style="color:var(--gray-600);line-height:1.9;margin-bottom:16px">Diagnóstico rápido e reparo eficiente de qualquer tipo de falha, com atendimento emergencial para minimizar o tempo de inatividade do seu sistema.</p>
+      <ul class="srv-list">
+        <li>Diagnóstico eletrônico e mecânico</li>
+        <li>Reparo de compressores e circuitos elétricos</li>
+        <li>Substituição de peças originais e certificadas</li>
+        <li>Atendimento emergencial 24 horas</li>
+        <li>Garantia sobre os serviços realizados</li>
+      </ul>
+      <a href="contato.html" class="btn-primary" style="margin-top:32px;display:inline-flex" id="btn-orcamento-corr">Chamada Técnica</a>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════ PMOC ══════════════════ -->
+<section class="pmoc-section" id="pmoc">
+  <div class="pmoc-inner">
+
+    <!-- Imagem destaque com título sobreposto -->
+    <div class="pmoc-top-img">
+      <img src="pmoc.png" alt="Sistema de climatização em ambiente comercial – PMOC"/>
+      <div class="pmoc-top-label">
+        <div class="ptag">Serviço 04</div>
+        <h2 style="color:var(--blue-royal)">PMOC</h2>
+      </div>
+    </div>
+
+    <!-- Conteúdo em duas colunas -->
+    <div class="pmoc-content-grid">
+
+      <!-- Coluna Esquerda: texto e normas -->
+      <div class="pmoc-text-block">
+        <span class="section-tag">Plano de Manutenção, Operação e Controle</span>
+        <h2 class="section-title" style="color:var(--blue-royal)!important">PMOC</h2>
+        <div class="divider"></div>
+
+        <div class="pmoc-law-box">
+          <p>O PMOC é obrigatório para todas as empresas com sistema de climatização com capacidade acima de <strong>5 TR (60 mil BTU/H)</strong>, mesmo que seja atingida pela soma de pequenos sistemas dentro de um mesmo ambiente. Ambientes como <strong>aeroportos, hospitais, instituições de ensino e empresas</strong> precisam estar em conformidade com a lei.</p>
+        </div>
+
+        <p style="color:var(--gray-600);line-height:1.9;margin-bottom:24px">O Plano de Manutenção, Operação e Controle é exigido pela <strong>Portaria MS nº 3.523/98</strong> do Ministério da Saúde e regulamentado pela <strong>ABNT NBR 16401</strong>. Sua inexistência pode gerar multas e interdições pelo órgão sanitário competente.</p>
+
+        <p style="color:var(--gray-600);line-height:1.9;margin-bottom:32px">A Dhenso elabora, implementa e executa o PMOC completo para sua empresa, garantindo conformidade legal, saúde dos ocupantes e eficiência dos equipamentos.</p>
+
+        <div class="normas-strip">
+          <h4>Legislação Aplicável</h4>
+          <div class="norma-item"><span class="norma-badge">Portaria MS 3.523/98</span><span>Regulamentação nacional de qualidade do ar interior</span></div>
+          <div class="norma-item"><span class="norma-badge">RE ANVISA 9/2003</span><span>Padrões de qualidade do ar em ambientes climatizados</span></div>
+          <div class="norma-item"><span class="norma-badge">ABNT NBR 16401</span><span>Instalações de ar condicionado – sistemas centrais e unitários</span></div>
+        </div>
+      </div>
+
+      <!-- Coluna Direita: benefícios -->
+      <div>
+        <div class="pmoc-benefits-card">
+          <h3>✦ Benefícios da Implantação do PMOC</h3>
+          <ul class="ben-list">
+            <li>
+              <div class="ben-check">✓</div>
+              <span><strong>Redução do custo com manutenção</strong> — Problemas identificados preventivamente evitam reparos emergenciais de alto valor.</span>
+            </li>
+            <li>
+              <div class="ben-check">✓</div>
+              <span><strong>Aumento da vida útil dos equipamentos</strong> — Manutenções regulares preservam componentes e reduzem o desgaste prematuro.</span>
+            </li>
+            <li>
+              <div class="ben-check">✓</div>
+              <span><strong>Economia de energia</strong> — Equipamentos bem mantidos operam com máxima eficiência, reduzindo o consumo elétrico.</span>
+            </li>
+            <li>
+              <div class="ben-check">✓</div>
+              <span><strong>Aumento do conforto térmico</strong> — Sistemas calibrados garantem temperatura e umidade ideais para os ambientes.</span>
+            </li>
+            <li>
+              <div class="ben-check">✓</div>
+              <span><strong>Qualidade de vida</strong> — Ar limpo e filtrado reduz fungos, bactérias e alérgenos, melhorando a saúde dos ocupantes.</span>
+            </li>
+            <li>
+              <div class="ben-check">✓</div>
+              <span><strong>Conformidade legal</strong> — Evita multas, autuações sanitárias e interdições do estabelecimento.</span>
+            </li>
+          </ul>
+        </div>
+        <a href="contato.html" class="btn-primary" style="margin-top:24px;display:flex;justify-content:center;text-decoration:none" id="btn-pmoc-orcamento">Solicitar PMOC Agora</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- HIGIENIZAÇÃO -->
+<div class="srv-detail" id="higienizacao">
+  <div class="srv-detail-grid">
+    <div class="srv-detail-img"><img src="services.png" alt="Higienização de ar condicionado"/></div>
+    <div>
+      <span class="section-tag">Serviço 05</span>
+      <h2 class="section-title"><span>Higienização</span> Profissional</h2>
+      <div class="divider"></div>
+      <p style="color:var(--gray-600);line-height:1.9;margin-bottom:16px">A higienização remove fungos, bactérias, ácaros e impurezas acumuladas nos equipamentos, garantindo qualidade do ar e proteção à saúde dos ocupantes.</p>
+      <ul class="srv-list">
+        <li>Limpeza química de evaporadoras e condensadoras</li>
+        <li>Higienização de dutos e difusores</li>
+        <li>Aplicação de biocidas e sanitizantes homologados</li>
+        <li>Laudo técnico de qualidade do ar</li>
+        <li>Conformidade com a RE ANVISA nº 9/2003</li>
+      </ul>
+      <a href="contato.html" class="btn-primary" style="margin-top:32px;display:inline-flex" id="btn-higienizacao">Agendar Higienização</a>
+    </div>
+  </div>
+</div>
+
+<!-- PROJETOS -->
+<div class="srv-detail" id="projetos">
+  <div class="srv-detail-grid reverse">
+    <div class="srv-detail-img"><img src="hero.png" alt="Projeto de climatização"/></div>
+    <div>
+      <span class="section-tag">Serviço 06</span>
+      <h2 class="section-title">Projetos de <span>Climatização</span></h2>
+      <div class="divider"></div>
+      <p style="color:var(--gray-600);line-height:1.9;margin-bottom:16px">Desenvolvemos projetos completos de HVAC para obras novas e retrofits, com dimensionamento técnico preciso e soluções eficientes para cada tipo de edificação.</p>
+      <ul class="srv-list">
+        <li>Cálculo de carga térmica e dimensionamento</li>
+        <li>Projetos para data centers e salas críticas</li>
+        <li>Automação e controle de sistemas HVAC</li>
+        <li>Projetos para hospitais e áreas limpas</li>
+        <li>Acompanhamento e comissionamento</li>
+      </ul>
+      <a href="contato.html" class="btn-primary" style="margin-top:32px;display:inline-flex" id="btn-projetos">Solicitar Projeto</a>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-band">
+  <div class="section-inner">
+    <h2>Não Sabe Por Onde Começar?</h2>
+    <p>Nossa equipe faz uma avaliação gratuita e indica o melhor serviço para a sua necessidade.</p>
+    <a href="contato.html" class="btn-primary" id="btn-avaliacao">Avaliação Gratuita</a>
+  </div>
+</div>
+
+<footer id="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a class="navbar-brand" href="index.html" style="text-decoration:none">
+        <div class="navbar-logo-text">
+          <div class="logo-dhenso">DHEN<span>SO</span></div>
+          <div class="logo-sub">Ar Condicionado</div>
+        </div>
+      </a>
+      <p>Especialistas em climatização com 10 anos de experiência. Qualidade, segurança e conformidade em cada projeto.</p>
+    </div>
+    <div class="footer-col"><h4>Páginas</h4><ul><li><a href="index.html">Início</a></li><li><a href="sobre.html">A Empresa</a></li><li><a href="servicos.html">Serviços</a></li><li><a href="contato.html">Contato</a></li></ul></div>
+    <div class="footer-col"><h4>Serviços</h4><ul><li><a href="#instalacao">Instalação</a></li><li><a href="#manutencao-preventiva">Manutenção Preventiva</a></li><li><a href="#manutencao-corretiva">Manutenção Corretiva</a></li><li><a href="#pmoc">PMOC</a></li><li><a href="#higienizacao">Higienização</a></li></ul></div>
+    <div class="footer-col"><h4>Contato</h4><ul><li><a href="tel:+5582999999999">(82) 9 9999-9999</a></li><li><a href="mailto:contato@dhenso.com.br">contato@dhenso.com.br</a></li><li><a href="#">Maceió – AL</a></li><li><a href="contato.html">Solicitar Orçamento</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>© 2024 Dhenso Ar Condicionado. Todos os direitos reservados.</span><span>Desenvolvido com excelência técnica</span></div>
+</footer>
+
+<script>
+  const navbar=document.getElementById('navbar');
+  window.addEventListener('scroll',()=>navbar.classList.toggle('scrolled',window.scrollY>40));
+  const ham=document.getElementById('hamburger'),menu=document.getElementById('navMenu');
+  ham.addEventListener('click',()=>{const o=menu.classList.toggle('open');ham.setAttribute('aria-expanded',o);});
+</script>
+</body>
+</html>

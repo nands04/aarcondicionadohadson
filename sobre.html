@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>A Empresa | Dhenso Ar Condicionado</title>
+  <meta name="description" content="Conheça a Dhenso Ar Condicionado – 10 anos de experiência em climatização, equipe certificada e comprometida com a excelência."/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .timeline { position:relative; padding-left:40px; margin-top:48px; }
+    .timeline::before { content:''; position:absolute; left:16px; top:0; bottom:0; width:2px; background:linear-gradient(180deg,var(--blue-royal),var(--accent)); }
+    .tl-item { position:relative; margin-bottom:40px; }
+    .tl-dot { position:absolute; left:-32px; top:4px; width:16px; height:16px; background:var(--blue-royal); border-radius:50%; border:3px solid var(--blue-ice); box-shadow:0 0 0 3px var(--blue-royal); }
+    .tl-year { font-family:var(--font-heading); font-size:.8rem; font-weight:800; color:var(--blue-royal); letter-spacing:2px; margin-bottom:6px; }
+    .tl-item h4 { font-weight:700; color:var(--gray-900); margin-bottom:6px; }
+    .tl-item p { font-size:.9rem; color:var(--gray-600); line-height:1.7; }
+    .valores-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:48px; }
+    .valor-card { background:var(--white); border-radius:var(--radius); padding:32px 24px; border:1px solid var(--gray-200); text-align:center; transition:all var(--transition); }
+    .valor-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-md); border-color:var(--blue-light); }
+    .valor-icon { width:64px; height:64px; background:linear-gradient(135deg,var(--blue-royal),var(--blue-mid)); border-radius:16px; display:flex; align-items:center; justify-content:center; margin:0 auto 20px; }
+    .valor-icon svg { width:28px; height:28px; stroke:white; }
+    .valor-card h3 { font-family:var(--font-heading); font-weight:800; color:var(--blue-royal); font-size:1.1rem; margin-bottom:10px; }
+    .valor-card p { font-size:.9rem; color:var(--gray-600); line-height:1.7; }
+    @media(max-width:768px){ .valores-grid{ grid-template-columns:1fr; } }
+    @media(max-width:1024px){ .valores-grid{ grid-template-columns:repeat(2,1fr); } }
+  </style>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <a class="navbar-brand" href="index.html" aria-label="Dhenso Ar Condicionado">
+    <div class="navbar-logo-text">
+      <div class="logo-dhenso" id="logo-dhenso-anim">
+        <span class="logo-letter" style="--li:0">D</span><span class="logo-letter" style="--li:1">H</span><span class="logo-letter" style="--li:2">E</span><span class="logo-letter" style="--li:3">N</span><span class="logo-letter logo-letter-so" style="--li:4">S</span><span class="logo-letter logo-letter-so" style="--li:5">O</span>
+      </div>
+      <div class="logo-sub" id="logo-sub-anim">Ar Condicionado</div>
+    </div>
+  </a>
+  <ul class="navbar-nav" id="navMenu">
+    <li><a href="index.html">Início</a></li>
+    <li><a href="sobre.html" class="active">A Empresa</a></li>
+    <li><a href="servicos.html">Serviços</a></li>
+    <li><a href="contato.html" class="navbar-cta">Fale Conosco</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="section-inner">
+    <div class="breadcrumb"><a href="index.html">Início</a><span>/</span><span style="color:white">A Empresa</span></div>
+    <h1>Nossa História e Missão</h1>
+    <p>Conheça a Dhenso Ar Condicionado, uma empresa construída sobre a base da excelência técnica e compromisso com o cliente.</p>
+  </div>
+</div>
+
+<!-- SOBRE PRINCIPAL -->
+<section class="about" id="sobre-principal">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-img-wrap">
+        <div class="about-img"><img src="hero.png" alt="Técnico Dhenso em serviço profissional"/></div>
+        <div class="about-badge-float">
+          <div class="num">10</div>
+          <div class="txt">Anos de<br/>Experiência</div>
+        </div>
+      </div>
+      <div class="about-text">
+        <span class="section-tag">Sobre Nós</span>
+        <h2 class="section-title">A Dhenso <span>Ar Condicionado</span></h2>
+        <div class="divider"></div>
+        <p style="color:var(--gray-600);line-height:1.9;margin-bottom:16px">A <strong>Dhenso Ar Condicionado</strong> atua há <strong>10 anos</strong> na prestação de serviços especializados em sistemas de ar condicionado. Ao longo dessa trajetória, consolidamos nossa reputação pela qualidade técnica, pontualidade e compromisso com a satisfação de cada cliente.</p>
+        <p style="color:var(--gray-600);line-height:1.9;margin-bottom:16px">Nossos serviços abrangem desde a instalação de sistemas residenciais até projetos complexos de climatização para hospitais, aeroportos, escolas e grandes corporações. Trabalhamos com as principais marcas do mercado e seguimos rigorosamente todas as normas técnicas e legislações vigentes, incluindo o PMOC.</p>
+        <p style="color:var(--gray-600);line-height:1.9">Nossa equipe é formada por técnicos certificados, em constante atualização, prontos para oferecer a melhor solução para cada necessidade.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALORES -->
+<section class="services" id="valores">
+  <div class="section-inner">
+    <div style="text-align:center">
+      <span class="section-tag">Nossos Pilares</span>
+      <h2 class="section-title">Missão, <span>Visão</span> e Valores</h2>
+      <div class="divider" style="margin:20px auto"></div>
+    </div>
+    <div class="valores-grid">
+      <div class="valor-card" id="card-missao">
+        <div class="valor-icon"><svg fill="none" stroke-width="1.8" viewBox="0 0 24 24"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Missão</h3>
+        <p>Prover soluções de climatização com excelência técnica, garantindo conforto, segurança e conformidade legal para nossos clientes.</p>
+      </div>
+      <div class="valor-card" id="card-visao">
+        <div class="valor-icon"><svg fill="none" stroke-width="1.8" viewBox="0 0 24 24"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Visão</h3>
+        <p>Ser referência nacional em soluções de climatização, reconhecida pela inovação tecnológica, sustentabilidade e qualidade de atendimento.</p>
+      </div>
+      <div class="valor-card" id="card-valores">
+        <div class="valor-icon"><svg fill="none" stroke-width="1.8" viewBox="0 0 24 24"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Valores</h3>
+        <p>Ética, transparência, responsabilidade técnica, comprometimento com o cliente e respeito às normas e ao meio ambiente.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="about" id="historia">
+  <div class="section-inner">
+    <span class="section-tag">Nossa Trajetória</span>
+    <h2 class="section-title">Uma Década de <span>Crescimento</span></h2>
+    <div class="divider"></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start">
+      <div>
+        <p class="section-lead" style="margin-bottom:0">Desde a fundação, a Dhenso construiu uma trajetória sólida, ampliando serviços, conquistando clientes e se tornando referência no setor de climatização.</p>
+        <div class="timeline">
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2014</div><h4>Fundação da Empresa</h4><p>Início das operações com foco em manutenção residencial e pequenas empresas.</p></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2016</div><h4>Expansão para o Setor Corporativo</h4><p>Primeiros contratos com empresas de médio porte e início dos serviços de PMOC.</p></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2018</div><h4>Certificações e Qualificações</h4><p>Equipe certificada pelas principais normas ABNT e Portaria MS 3.523.</p></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2020</div><h4>Atendimento a Hospitais e Escolas</h4><p>Início dos contratos com instituições de saúde e educação, setores de alta exigência técnica.</p></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2024</div><h4>10 Anos de Excelência</h4><p>Mais de 500 clientes atendidos, equipe robusta e posição consolidada no mercado.</p></div>
+        </div>
+      </div>
+      <div style="padding-top:16px">
+        <div style="background:var(--gray-50);border-radius:var(--radius-lg);overflow:hidden">
+          <img src="pmoc.png" alt="Instalação de sistema de ar condicionado" style="width:100%;height:auto;display:block"/>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px">
+          <div style="background:linear-gradient(135deg,var(--blue-royal),var(--blue-mid));border-radius:var(--radius);padding:24px;text-align:center;color:white">
+            <div style="font-family:var(--font-heading);font-size:2rem;font-weight:900;color:var(--accent)">500+</div>
+            <div style="font-size:.85rem;opacity:.85;margin-top:4px">Clientes Atendidos</div>
+          </div>
+          <div style="background:linear-gradient(135deg,var(--blue-dark),var(--blue-royal));border-radius:var(--radius);padding:24px;text-align:center;color:white">
+            <div style="font-family:var(--font-heading);font-size:2rem;font-weight:900;color:var(--accent)">100%</div>
+            <div style="font-size:.85rem;opacity:.85;margin-top:4px">Conformidade Legal</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- CTA -->
+<div class="cta-band">
+  <div class="section-inner">
+    <h2>Pronto para Trabalhar Conosco?</h2>
+    <p>Entre em contato e descubra como a Dhenso pode transformar o conforto térmico da sua empresa.</p>
+    <a href="contato.html" class="btn-primary" id="btn-orcamento-sobre">Solicitar Orçamento</a>
+  </div>
+</div>
+
+<footer id="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a class="navbar-brand" href="index.html" style="text-decoration:none">
+        <div class="navbar-logo-text">
+          <div class="logo-dhenso">DHEN<span>SO</span></div>
+          <div class="logo-sub">Ar Condicionado</div>
+        </div>
+      </a>
+      <p>Especialistas em climatização com 10 anos de experiência. Qualidade, segurança e conformidade em cada projeto.</p>
+    </div>
+    <div class="footer-col"><h4>Páginas</h4><ul><li><a href="index.html">Início</a></li><li><a href="sobre.html">A Empresa</a></li><li><a href="servicos.html">Serviços</a></li><li><a href="contato.html">Contato</a></li></ul></div>
+    <div class="footer-col"><h4>Serviços</h4><ul><li><a href="servicos.html">Instalação</a></li><li><a href="servicos.html">Manutenção Preventiva</a></li><li><a href="servicos.html">Manutenção Corretiva</a></li><li><a href="servicos.html#pmoc">PMOC</a></li><li><a href="servicos.html">Higienização</a></li></ul></div>
+    <div class="footer-col"><h4>Contato</h4><ul><li><a href="tel:+5582999999999">(82) 9 9999-9999</a></li><li><a href="mailto:contato@dhenso.com.br">contato@dhenso.com.br</a></li><li><a href="#">Maceió – AL</a></li><li><a href="contato.html">Solicitar Orçamento</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>© 2024 Dhenso Ar Condicionado. Todos os direitos reservados.</span><span>Desenvolvido com excelência técnica</span></div>
+</footer>
+
+<script>
+  const navbar=document.getElementById('navbar');
+  window.addEventListener('scroll',()=>navbar.classList.toggle('scrolled',window.scrollY>40));
+  const ham=document.getElementById('hamburger'),menu=document.getElementById('navMenu');
+  ham.addEventListener('click',()=>{const o=menu.classList.toggle('open');ham.setAttribute('aria-expanded',o);});
+</script>
+</body>
+</html>
