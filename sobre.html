@@ -171,10 +171,9 @@
   const navbar=document.getElementById('navbar');
   window.addEventListener('scroll',()=>navbar.classList.toggle('scrolled',window.scrollY>40));
   const ham=document.getElementById('hamburger'),menu=document.getElementById('navMenu');
-  function closeMenu(){menu.classList.remove('open');ham.classList.remove('open');ham.setAttribute('aria-expanded','false');}
-  ham.addEventListener('click',()=>{const o=menu.classList.toggle('open');ham.classList.toggle('open',o);ham.setAttribute('aria-expanded',String(o));});
+  function closeMenu(){menu.classList.remove('open');ham.classList.remove('open');ham.setAttribute('aria-expanded','false');document.body.style.overflow='';}
+  ham.addEventListener('click',()=>{const o=menu.classList.toggle('open');ham.classList.toggle('open',o);ham.setAttribute('aria-expanded',String(o));document.body.style.overflow=o?'hidden':'';});
   menu.querySelectorAll('a').forEach(l=>l.addEventListener('click',closeMenu));
-  window.addEventListener('scroll',()=>{if(menu.classList.contains('open'))closeMenu();},{passive:true});
 </script>
 </body>
 </html>

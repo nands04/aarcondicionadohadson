@@ -213,16 +213,16 @@
     menu.classList.remove('open');
     ham.classList.remove('open');
     ham.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
   }
   ham.addEventListener('click', () => {
     const open = menu.classList.toggle('open');
     ham.classList.toggle('open', open);
     ham.setAttribute('aria-expanded', String(open));
+    document.body.style.overflow = open ? 'hidden' : '';
   });
   // Fecha o menu ao clicar em qualquer link
   menu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
-  // Fecha o menu ao rolar
-  window.addEventListener('scroll', () => { if (menu.classList.contains('open')) closeMenu(); }, { passive: true });
 </script>
 </body>
 </html>
