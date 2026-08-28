@@ -380,7 +380,7 @@ footer {
     top: 64px;
     left: 0;
     right: 0;
-    bottom: 0;
+    height: calc(100vh - 64px);
     background: rgba(10, 26, 77, 0.99);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
@@ -388,6 +388,7 @@ footer {
     align-items: center;
     justify-content: flex-start;
     padding-top: 40px;
+    padding-bottom: 80px; /* espaco extra pra nao colar embaixo */
     gap: 8px;
     z-index: 9999;
     border-top: 1px solid rgba(255,255,255,.1);
