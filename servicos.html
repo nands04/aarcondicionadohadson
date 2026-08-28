@@ -41,6 +41,7 @@
     .norma-badge { background:var(--blue-royal); color:white; font-size:.72rem; font-weight:700; padding:4px 10px; border-radius:100px; letter-spacing:.5px; white-space:nowrap; }
     .norma-item span { font-size:.88rem; color:var(--gray-600); }
     @media(max-width:1024px){ .srv-detail-grid,.pmoc-content-grid{ grid-template-columns:1fr; gap:40px; } .srv-detail-grid.reverse{ direction:ltr; } }
+    @media(max-width:768px){ .srv-detail{ padding:56px 5%; } .srv-detail-img img{ height:240px; } .pmoc-top-img{ height:220px; margin-bottom:40px; } .pmoc-top-label h2{ font-size:2rem; } .pmoc-benefits-card{ padding:28px 20px; } .normas-strip{ padding:20px; } }
   </style>
 </head>
 <body>
@@ -48,9 +49,7 @@
 <nav class="navbar" id="navbar">
   <a class="navbar-brand" href="index.html" aria-label="Dhenso Ar Condicionado">
     <div class="navbar-logo-text">
-      <div class="logo-dhenso" id="logo-dhenso-anim">
-        <span class="logo-letter" style="--li:0">D</span><span class="logo-letter" style="--li:1">H</span><span class="logo-letter" style="--li:2">E</span><span class="logo-letter" style="--li:3">N</span><span class="logo-letter logo-letter-so" style="--li:4">S</span><span class="logo-letter logo-letter-so" style="--li:5">O</span>
-      </div>
+      <div class="logo-dhenso" id="logo-dhenso-anim">DHEN<span>SO</span></div>
       <div class="logo-sub" id="logo-sub-anim">Ar Condicionado</div>
     </div>
   </a>
@@ -277,14 +276,17 @@
     <div class="footer-col"><h4>Serviços</h4><ul><li><a href="#instalacao">Instalação</a></li><li><a href="#manutencao-preventiva">Manutenção Preventiva</a></li><li><a href="#manutencao-corretiva">Manutenção Corretiva</a></li><li><a href="#pmoc">PMOC</a></li><li><a href="#higienizacao">Higienização</a></li></ul></div>
     <div class="footer-col"><h4>Contato</h4><ul><li><a href="tel:+5582999999999">(82) 9 9999-9999</a></li><li><a href="mailto:contato@dhenso.com.br">contato@dhenso.com.br</a></li><li><a href="#">Maceió – AL</a></li><li><a href="contato.html">Solicitar Orçamento</a></li></ul></div>
   </div>
-  <div class="footer-bottom"><span>© 2024 Dhenso Ar Condicionado. Todos os direitos reservados.</span><span>Desenvolvido com excelência técnica</span></div>
+  <div class="footer-bottom"><span>© 2026 Dhenso Ar Condicionado. Todos os direitos reservados.</span><span>Desenvolvido com excelência técnica</span></div>
 </footer>
 
 <script>
   const navbar=document.getElementById('navbar');
   window.addEventListener('scroll',()=>navbar.classList.toggle('scrolled',window.scrollY>40));
   const ham=document.getElementById('hamburger'),menu=document.getElementById('navMenu');
-  ham.addEventListener('click',()=>{const o=menu.classList.toggle('open');ham.setAttribute('aria-expanded',o);});
+  function closeMenu(){menu.classList.remove('open');ham.classList.remove('open');ham.setAttribute('aria-expanded','false');}
+  ham.addEventListener('click',()=>{const o=menu.classList.toggle('open');ham.classList.toggle('open',o);ham.setAttribute('aria-expanded',String(o));});
+  menu.querySelectorAll('a').forEach(l=>l.addEventListener('click',closeMenu));
+  window.addEventListener('scroll',()=>{if(menu.classList.contains('open'))closeMenu();},{passive:true});
 </script>
 </body>
 </html>

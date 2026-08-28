@@ -13,9 +13,7 @@
 <nav class="navbar" id="navbar">
   <a class="navbar-brand" href="index.html" aria-label="Dhenso Ar Condicionado - Início">
     <div class="navbar-logo-text">
-      <div class="logo-dhenso" id="logo-dhenso-anim">
-        <span class="logo-letter" style="--li:0">D</span><span class="logo-letter" style="--li:1">H</span><span class="logo-letter" style="--li:2">E</span><span class="logo-letter" style="--li:3">N</span><span class="logo-letter logo-letter-so" style="--li:4">S</span><span class="logo-letter logo-letter-so" style="--li:5">O</span>
-      </div>
+      <div class="logo-dhenso" id="logo-dhenso-anim">DHEN<span>SO</span></div>
       <div class="logo-sub" id="logo-sub-anim">Ar Condicionado</div>
     </div>
   </a>
@@ -42,7 +40,7 @@
   <div class="hero-bg-overlay"></div>
   <div class="hero-particles"></div>
   <div class="hero-content">
-    <div class="hero-badge"><span class="dot"></span>10 Anos de Excelência</div>
+
     <h1>Soluções Completas em<br/><span>Climatização</span> para Empresas<br/>e Residências</h1>
     <p>A Dhenso Ar Condicionado é especialista em climatização corporativa e projetos de alto rigor técnico. Garantimos a <strong>conformidade legal (PMOC)</strong> e a eficiência do seu sistema com total segurança e excelência técnica.</p>
     <div class="hero-btns">
@@ -55,12 +53,7 @@
         Solicitar Orçamento
       </a>
     </div>
-    <div class="hero-stats">
-      <div class="stat"><div class="stat-num">10+</div><div class="stat-label">Anos no Mercado</div></div>
-      <div class="stat"><div class="stat-num">500+</div><div class="stat-label">Clientes Atendidos</div></div>
-      <div class="stat"><div class="stat-num">98%</div><div class="stat-label">Satisfação</div></div>
-      <div class="stat"><div class="stat-num">24h</div><div class="stat-label">Suporte Técnico</div></div>
-    </div>
+
   </div>
 </section>
 
@@ -204,7 +197,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2024 Dhenso Ar Condicionado. Todos os direitos reservados.</span>
+    <span>© 2026 Dhenso Ar Condicionado. Todos os direitos reservados.</span>
     <span>Desenvolvido com excelência técnica</span>
   </div>
 </footer>
@@ -216,10 +209,20 @@
   // Hamburger
   const ham = document.getElementById('hamburger');
   const menu = document.getElementById('navMenu');
+  function closeMenu() {
+    menu.classList.remove('open');
+    ham.classList.remove('open');
+    ham.setAttribute('aria-expanded', 'false');
+  }
   ham.addEventListener('click', () => {
     const open = menu.classList.toggle('open');
-    ham.setAttribute('aria-expanded', open);
+    ham.classList.toggle('open', open);
+    ham.setAttribute('aria-expanded', String(open));
   });
+  // Fecha o menu ao clicar em qualquer link
+  menu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+  // Fecha o menu ao rolar
+  window.addEventListener('scroll', () => { if (menu.classList.contains('open')) closeMenu(); }, { passive: true });
 </script>
 </body>
 </html>

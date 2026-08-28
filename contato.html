@@ -33,9 +33,7 @@
 <nav class="navbar" id="navbar">
   <a class="navbar-brand" href="index.html" aria-label="Dhenso Ar Condicionado">
     <div class="navbar-logo-text">
-      <div class="logo-dhenso" id="logo-dhenso-anim">
-        <span class="logo-letter" style="--li:0">D</span><span class="logo-letter" style="--li:1">H</span><span class="logo-letter" style="--li:2">E</span><span class="logo-letter" style="--li:3">N</span><span class="logo-letter logo-letter-so" style="--li:4">S</span><span class="logo-letter logo-letter-so" style="--li:5">O</span>
-      </div>
+      <div class="logo-dhenso" id="logo-dhenso-anim">DHEN<span>SO</span></div>
       <div class="logo-sub" id="logo-sub-anim">Ar Condicionado</div>
     </div>
   </a>
@@ -233,7 +231,7 @@
     <div class="footer-col"><h4>Serviços</h4><ul><li><a href="servicos.html">Instalação</a></li><li><a href="servicos.html">Manutenção Preventiva</a></li><li><a href="servicos.html">Manutenção Corretiva</a></li><li><a href="servicos.html#pmoc">PMOC</a></li><li><a href="servicos.html">Higienização</a></li></ul></div>
     <div class="footer-col"><h4>Contato</h4><ul><li><a href="tel:+5582999999999">(82) 9 9999-9999</a></li><li><a href="mailto:contato@dhenso.com.br">contato@dhenso.com.br</a></li><li><a href="#">Maceió – AL</a></li></ul></div>
   </div>
-  <div class="footer-bottom"><span>© 2024 Dhenso Ar Condicionado. Todos os direitos reservados.</span><span>Desenvolvido com excelência técnica</span></div>
+  <div class="footer-bottom"><span>© 2026 Dhenso Ar Condicionado. Todos os direitos reservados.</span><span>Desenvolvido com excelência técnica</span></div>
 </footer>
 
 <script>
@@ -241,8 +239,12 @@
   const navbar=document.getElementById('navbar');
   window.addEventListener('scroll',()=>navbar.classList.toggle('scrolled',window.scrollY>40));
   // Hamburger
+  // Hamburger
   const ham=document.getElementById('hamburger'),menu=document.getElementById('navMenu');
-  ham.addEventListener('click',()=>{const o=menu.classList.toggle('open');ham.setAttribute('aria-expanded',o);});
+  function closeMenu(){menu.classList.remove('open');ham.classList.remove('open');ham.setAttribute('aria-expanded','false');}
+  ham.addEventListener('click',()=>{const o=menu.classList.toggle('open');ham.classList.toggle('open',o);ham.setAttribute('aria-expanded',String(o));});
+  menu.querySelectorAll('a').forEach(l=>l.addEventListener('click',closeMenu));
+  window.addEventListener('scroll',()=>{if(menu.classList.contains('open'))closeMenu();},{passive:true});
   // FAQ accordion
   document.querySelectorAll('.faq-question').forEach(btn=>{
     btn.addEventListener('click',()=>{
