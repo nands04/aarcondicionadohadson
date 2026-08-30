@@ -35,7 +35,7 @@
     <li><a href="index.html">Início</a></li>
     <li><a href="sobre.html" class="active">A Empresa</a></li>
     <li><a href="servicos.html">Serviços</a></li>
-    <li><a href="https://wa.me/5582988754135?text=Olá!%20Gostaria%20de%20falar%20com%20um%20consultor." target="_blank" class="navbar-cta">Fale Conosco</a></li>
+    <li><a href="https://wa.me/5582988754135?text=Olá!%20Gostaria%20de%20falar%20com%20um%20consultor." target="_blank" class="navbar-cta" data-tina-href="phoneWhatsapp">Fale Conosco</a></li>
   </ul>
   <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
@@ -54,7 +54,7 @@
   <div class="section-inner">
     <div class="about-grid">
       <div class="about-img-wrap">
-        <div class="about-img"><img src="hero.png" alt="Técnico Dhenso em serviço profissional"/></div>
+        <div class="about-img"><img src="hero.png" alt="Técnico Dhenso em serviço profissional" data-tina-src="aboutImage"/></div>
         <div class="about-badge-float">
           <div class="num">10</div>
           <div class="txt">Anos de<br/>Experiência</div>
@@ -142,7 +142,7 @@
   <div class="section-inner">
     <h2>Pronto para Trabalhar Conosco?</h2>
     <p>Entre em contato e descubra como a Dhenso pode transformar o conforto térmico da sua empresa.</p>
-    <a href="https://wa.me/5582988754135?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento." target="_blank" class="btn-primary" id="btn-orcamento-sobre">Solicitar Orçamento</a>
+    <a href="https://wa.me/5582988754135?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento." target="_blank" class="btn-primary" id="btn-orcamento-sobre" data-tina-href="phoneWhatsapp">Solicitar Orçamento</a>
   </div>
 </div>
 
@@ -156,7 +156,7 @@
     </div>
     <div class="footer-col"><h4>Páginas</h4><ul><li><a href="index.html">Início</a></li><li><a href="sobre.html">A Empresa</a></li><li><a href="servicos.html">Serviços</a></li><li><a href="contato.html">Contato</a></li></ul></div>
     <div class="footer-col"><h4>Serviços</h4><ul><li><a href="servicos.html">Instalação</a></li><li><a href="servicos.html">Manutenção Preventiva</a></li><li><a href="servicos.html">Manutenção Corretiva</a></li><li><a href="servicos.html#pmoc">PMOC</a></li><li><a href="servicos.html">Higienização</a></li></ul></div>
-    <div class="footer-col"><h4>Contato</h4><ul><li><a href="tel:+5582988754135">(82) 9 8875-4135</a></li><li><a href="mailto:contato@dhenso.com.br">contato@dhenso.com.br</a></li><li><a href="#">R. Gonçalves Dias, 85 - Farol, Maceió - AL, 57051-330</a></li><li><a href="https://wa.me/5582988754135?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento." target="_blank">Solicitar Orçamento</a></li></ul></div>
+    <div class="footer-col"><h4>Contato</h4><ul><li><a href="tel:+5582988754135" data-tina-href="phoneLabel" data-tina="phoneLabel">(82) 9 8875-4135</a></li><li><a href="mailto:contato@dhenso.com.br" data-tina-href="email" data-tina="email">contato@dhenso.com.br</a></li><li><a href="#" data-tina="address">R. Gonçalves Dias, 85 - Farol, Maceió - AL, 57051-330</a></li><li><a href="https://wa.me/5582988754135?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento." target="_blank" data-tina-href="phoneWhatsapp">Solicitar Orçamento</a></li></ul></div>
   </div>
   <div class="footer-bottom"><span>© 2026 Dhenso Ar Condicionado. Todos os direitos reservados.</span><span>Desenvolvido com excelência técnica</span></div>
 </footer>
@@ -169,5 +169,6 @@
   ham.addEventListener('click',()=>{const o=menu.classList.toggle('open');ham.classList.toggle('open',o);ham.setAttribute('aria-expanded',String(o));document.body.style.overflow=o?'hidden':'';});
   menu.querySelectorAll('a').forEach(l=>l.addEventListener('click',closeMenu));
 </script>
+<script src="tina-loader.js"></script>
 </body>
 </html>

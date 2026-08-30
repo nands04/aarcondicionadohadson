@@ -1,0 +1,27 @@
+{
+  "name": "dhenso-ar-condicionado",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nands04/aarcondicionadohadson.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nands04/aarcondicionadohadson/issues"
+  },
+  "homepage": "https://github.com/nands04/aarcondicionadohadson#readme",
+  "dependencies": {
+    "tinacms": "^3.12.1"
+  },
+  "devDependencies": {
+    "@tinacms/cli": "^2.6.1",
+    "@types/node": "^26.4.0"
+  }
+}
