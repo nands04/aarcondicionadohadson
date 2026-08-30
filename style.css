@@ -420,27 +420,13 @@ footer {
 
   /* ── Hero ── */
   .hero {
-    display: block;
-    min-height: auto;
+    min-height: 100svh;
     padding-top: 64px;
-    padding-bottom: 0;
-  }
-  .hero-bg-video {
-    position: relative;
-    inset: auto;
-    width: 100%;
-    height: 56.25vw; /* 16:9 aspect ratio */
-    min-height: 250px;
-    object-fit: cover;
-  }
-  .hero-bg-overlay {
-    top: 64px;
-    bottom: auto;
-    height: 56.25vw;
-    min-height: 250px;
+    align-items: center;
+    padding-bottom: 48px;
   }
   .hero-content {
-    padding: 32px 5% 48px;
+    padding: 32px 5%;
     text-align: center;
   }
   .hero-badge {
