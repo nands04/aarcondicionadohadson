@@ -42,6 +42,7 @@ body { font-family: var(--font-main); color: var(--gray-800); background: var(--
 .navbar.scrolled { box-shadow: var(--shadow-lg); }
 .navbar-brand { display: flex; align-items: center; text-decoration: none; }
 .navbar-logo-text { display: flex; flex-direction: column; justify-content: center; }
+.navbar-logo-img { height: 48px; width: auto; display: block; object-fit: contain; }
 .logo-dhenso { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 900; color: var(--white); letter-spacing: 1.5px; line-height: 1; text-shadow: 0 2px 12px rgba(0,0,0,0.15); }
 .logo-dhenso span { color: var(--accent); }
 .logo-sub { font-family: var(--font-main); font-size: 0.65rem; font-weight: 700; color: var(--accent); letter-spacing: 3.5px; text-transform: uppercase; margin-top: 4px; }
@@ -108,23 +109,17 @@ body { font-family: var(--font-main); color: var(--gray-800); background: var(--
 /* ── HERO ── */
 .hero {
   min-height: 100vh; position: relative; display: flex; align-items: center;
-  background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue-royal) 60%, #1e4fd8 100%);
+  background: #000;
   overflow: hidden; padding-top: 72px;
 }
 .hero-bg-video {
   position: absolute; inset: 0; width: 100%; height: 100%;
   object-fit: cover; object-position: center;
-  opacity: .38; mix-blend-mode: luminosity;
   pointer-events: none;
 }
 .hero-bg-overlay {
   position: absolute; inset: 0; pointer-events: none;
-  background: linear-gradient(
-    135deg,
-    rgba(13,38,96,.82) 0%,
-    rgba(26,60,143,.72) 60%,
-    rgba(30,79,216,.65) 100%
-  );
+  background: linear-gradient(135deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 100%);
 }
 .hero-particles { position: absolute; inset: 0; overflow: hidden; }
 .hero-particles::before {
@@ -371,6 +366,9 @@ footer {
     padding: 0 4%;
     height: 64px;
   }
+  .navbar-logo-img {
+    height: 38px;
+  }
   .hamburger {
     display: flex;
   }
@@ -422,13 +420,27 @@ footer {
 
   /* ── Hero ── */
   .hero {
-    min-height: 100svh;
+    display: block;
+    min-height: auto;
     padding-top: 64px;
-    align-items: center;
-    padding-bottom: 48px;
+    padding-bottom: 0;
+  }
+  .hero-bg-video {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: 56.25vw; /* 16:9 aspect ratio */
+    min-height: 250px;
+    object-fit: cover;
+  }
+  .hero-bg-overlay {
+    top: 64px;
+    bottom: auto;
+    height: 56.25vw;
+    min-height: 250px;
   }
   .hero-content {
-    padding: 32px 5%;
+    padding: 32px 5% 48px;
     text-align: center;
   }
   .hero-badge {
@@ -559,8 +571,8 @@ footer {
   .navbar {
     padding: 0 4%;
   }
-  .logo-dhenso {
-    font-size: 1.2rem;
+  .navbar-logo-img {
+    height: 32px;
   }
   .logo-sub {
     font-size: 0.58rem;
