@@ -16,7 +16,7 @@ export default defineConfig({
 
   build: {
     outputFolder: "admin",
-    publicFolder: ".",
+    publicFolder: "",
   },
   // Uncomment to allow cross-origin requests from non-localhost origins
   // during local development (e.g. GitHub Codespaces, Gitpod, Docker).
