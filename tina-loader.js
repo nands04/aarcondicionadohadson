@@ -1,18 +1,23 @@
 document.addEventListener("DOMContentLoaded", () => {
-  fetch('/content/data/info.json')
-    .then(response => {
-      if (!response.ok) throw new Error('Data file not found');
-      return response.json();
-    })
-    .then(data => {
+  // Determine current page
+  let path = window.location.pathname;
+  let pageName = 'home';
+  if (path.includes('sobre.html')) pageName = 'sobre';
+  else if (path.includes('servicos.html')) pageName = 'servicos';
+  else if (path.includes('contato.html')) pageName = 'contato';
+
+  const fetchGlobal = fetch('/content/data/info.json').then(res => res.ok ? res.json() : {}).catch(() => ({}));
+  const fetchPage = fetch(`/content/pages/${pageName}.json`).then(res => res.ok ? res.json() : {}).catch(() => ({}));
+
+  Promise.all([fetchGlobal, fetchPage])
+    .then(([globalData, pageData]) => {
+      const data = { ...globalData, ...pageData };
+
       // 1. Text Content
       const textElements = document.querySelectorAll('[data-tina]');
       textElements.forEach(el => {
         const field = el.getAttribute('data-tina');
-        if (data[field]) {
-          // If the text contains HTML (like <br> or <span>), we use innerHTML
-          // But to be safe with simple strings, we can just use innerHTML or textContent
-          // Since heroTitle has <br> and <span> in the original, we should use innerHTML
+        if (data[field] !== undefined && data[field] !== null) {
           el.innerHTML = data[field];
         }
       });
@@ -32,8 +37,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const field = el.getAttribute('data-tina-href');
         if (data[field]) {
           if (field === 'phoneWhatsapp') {
-            // It's a whatsapp link. Let's update the phone number in the wa.me URL
-            // Original URL format: https://wa.me/5582988754135?text=...
             const currentHref = el.getAttribute('href');
             if (currentHref && currentHref.includes('wa.me/')) {
               const urlParts = currentHref.split('?');
@@ -43,9 +46,8 @@ document.addEventListener("DOMContentLoaded", () => {
           } else if (field === 'email') {
             el.setAttribute('href', `mailto:${data[field]}`);
           } else if (field === 'phoneLabel') {
-            // Keep digits only for tel:
             const digits = data[field].replace(/\D/g, '');
-            el.setAttribute('href', `tel:+55${digits}`); // assuming BR country code
+            el.setAttribute('href', `tel:+55${digits}`);
           } else {
             el.setAttribute('href', data[field]);
           }

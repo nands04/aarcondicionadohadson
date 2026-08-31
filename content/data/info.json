@@ -1,13 +1,8 @@
 {
-  "heroTitle": "Soluções Completas em Climatização para Empresas e Residências",
-  "heroDescription": "A Dhenso Ar Condicionado é especialista em climatização corporativa e projetos de alto rigor técnico. Garantimos a conformidade legal (PMOC) e a eficiência do seu sistema com total segurança e excelência técnica.",
   "phoneLabel": "(82) 9 8875-4135",
-  "phoneWhatsapp": "5582988754135",
+  "phoneWhatsapp": "https://wa.me/5582988754135?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento.",
   "email": "contato@dhenso.com.br",
   "address": "R. Gonçalves Dias, 85 - Farol, Maceió - AL, 57051-330",
-  "heroImage": "/Cena_inicial_-_2026-08-29_202608291904.mp4",
-  "aboutImage": "/hero.png",
-  "servicesImage": "/services.png",
-  "pmocImage": "/pmoc.png",
-  "servicesLead": "Atendemos todo tipo de sistema de climatização com a mais alta qualidade técnica e comprometimento."
+  "footerText": "Especialistas em climatização com 10 anos de experiência. Qualidade, segurança e conformidade em cada projeto.",
+  "footerCopyright": "© 2026 Dhenso Ar Condicionado. Todos os direitos reservados."
 }
